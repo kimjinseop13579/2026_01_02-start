@@ -1,32 +1,79 @@
 package Study20260102;
 
+import java.util.Scanner;
+
 public class MainMethod {
 
 	public static void main(String[] args) {
 		
 	
 		// 바이킹 탑승 가능 : 145cm 이상
-	    int cm = 160;
-		
-		if(145 <= cm) {
-			System.out.println("바이킹 탑숭 가능");
-		}else {
-			System.out.println("바이킹 탑승 불가");
-		}
-		
-		int age = 33;
-		
-		if ((age/10) == 3  ) //30 <= age && age <40
-		      System.out.println("30대 이다");
-		else 
-			System.out.println("20대 이다");
-		
+//	    int cm = 160;
+//		
+//		if(145 <= cm) {
+//			System.out.println("바이킹 탑숭 가능");
+//		}else {
+//			System.out.println("바이킹 탑승 불가");
+//		}
+//		
+//		int age = 33;
+//		
+//		if ((age/10) == 3  ) //30 <= age && age <40
+//		      System.out.println("30대 이다");
+//		else 
+//			System.out.println("20대 이다");
+//		
 		// 주차장의 요금이 기본요금은 1000 원이다
 		// 기본시간은 30분이다.
+		
 		// 초과시 10 분당 100원씩 추가 예) 39분은 1000원, 40분은 1100원
+		
 		// 단 4시간 이상 주차시 기본요금은 2500원 이다.
+		
 		// 예 3시간 50분 (230분) -> 1000원
 		// 4시간 12분 (252분) -> 2600
+		
+		
+		//데이터 입력
+		
+		Scanner kbd = new Scanner(System.in);
+		
+		int Money1 = 1000; // 기본요금
+		int Money2 = 100; // 추가요금
+		int Time1 = 30; // 기본 주차시간
+		System.out.println("시간을 입력해주세요");
+		
+		System.out.print("시 : "); 
+		int Hour = kbd.nextInt(); // 입력 시
+		
+		System.out.print("분 : ");
+		int Min = kbd.nextInt(); // 입력 분
+		
+		int Hr = (Hour * 60) + Min; // 입력 받은 시 - 분으로 변환
+		
+		//데이터 처리
+		
+		if (40 > Hr) {
+			System.out.println("요금 : "+Money1);
+		}else if( 40 <= Hr && 240 > Hr) {
+			Money2 = (Hr-30)/10*100;
+			System.out.println("요금 : "+(Money1+Money2));
+		}else if( 240 <= Hr) {
+			Money1 = 2500;
+			Money2 = (Hr-30)/10*100;
+			System.out.println("요금 : "+(Money1+Money2));
+		}
+		
+		
+		
+		
+		//데이터 출력
+		
+		
+		
+		
+		
+		
 		
 		
 
