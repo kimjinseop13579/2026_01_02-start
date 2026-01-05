@@ -36,39 +36,61 @@ public class MainMethod {
 		
 		//데이터 입력
 		
-		Scanner kbd = new Scanner(System.in);
+//		Scanner kbd = new Scanner(System.in);
+//		
+//		int Money1 = 1000; // 기본요금
+//		int Money2 = 100; // 추가요금
+//		int Time1 = 30; // 기본 주차시간
+//		System.out.println("시간을 입력해주세요");
+//		
+//		System.out.print("시간 : "); 
+//		int Hour = kbd.nextInt(); // 입력 시
+//		
+//		System.out.print("분 : ");
+//		int Min = kbd.nextInt(); // 입력 분
+//		
+//		int Hr = (Hour * 60) + Min; // 입력 받은 시 - 분으로 변환
+//		
+//		//데이터 처리
+//		
+//		if (40 > Hr) {
+//			System.out.println("요금 : "+Money1);
+//		}else if( 40 <= Hr && 240 > Hr) {
+//			Money2 = (Hr-30)/10*100;
+//			System.out.println("요금 : "+(Money1+Money2));
+//		}else if( 240 <= Hr) {
+//			Money1 = 2500;
+//			Money2 = (Hr-30)/10*100;
+//			System.out.println("요금 : "+(Money1+Money2));
+//		}
 		
-		int Money1 = 1000; // 기본요금
-		int Money2 = 100; // 추가요금
-		int Time1 = 30; // 기본 주차시간
-		System.out.println("시간을 입력해주세요");
 		
-		System.out.print("시 : "); 
-		int Hour = kbd.nextInt(); // 입력 시
+		int cost = 1000;
+		int inc = 100, incTime = 10;
+		int time = 30;
 		
-		System.out.print("분 : ");
-		int Min = kbd.nextInt(); // 입력 분
+		//주차시간 총 몇분 입력
 		
-		int Hr = (Hour * 60) + Min; // 입력 받은 시 - 분으로 변환
+		Scanner scan = new Scanner(System.in);// 시스템(컴퓨터)으로부터 입력된키 값 받기
 		
-		//데이터 처리
+		System.out.println("총 몇분 주차 : ");
+		int pTime = scan.nextInt();// 키보드로 입력받아서 정수로 변환하여 변수에 저장
 		
-		if (40 > Hr) {
-			System.out.println("요금 : "+Money1);
-		}else if( 40 <= Hr && 240 > Hr) {
-			Money2 = (Hr-30)/10*100;
-			System.out.println("요금 : "+(Money1+Money2));
-		}else if( 240 <= Hr) {
-			Money1 = 2500;
-			Money2 = (Hr-30)/10*100;
-			System.out.println("요금 : "+(Money1+Money2));
+		pTime/= 10; // pTime = pTime /10 - 3
+		if( pTime >= 24) {//4시간 이상 주차했다면 pTime >= 240
+			cost=2500;// 4시간 이상에 대한 기본요금 변경
+			pTime -= 24; //4시간 빼기 , 4시간에 대한 요금은 2500원 나머지는 10분당 요금
+		}else if(pTime > 3){
+			//4시간 이상이 아니라면 , 기본시간이 30분으로 계산되어야 한다.
+			pTime -= 3; //기본시간이 30분이니가 3빼기
+		}else {//최초 기본시간 안에 주차 한 경우
+			pTime=0;
 		}
 		
+		int price = cost + pTime*100;
+		System.out.println("주차요금 : "+price +"원");
 		
-		
-		
-		//데이터 출력
-		
+		//주차 요금 계산
 		
 		
 		
