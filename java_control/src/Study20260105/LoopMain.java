@@ -141,19 +141,67 @@ public class LoopMain {
 //		 *  몇승, 몇패 , 몇무 출력하기
 		
 		// 1.가위  2.바위  3.보
+//		System.out.println("가위 : 1, 바위 : 2, 보 : 3");
+//		
+//		int Wincount = 0;
+//		int Losecount = 0;
+//		int Count = 0;
+//		
+//		
+//		for (int i=1; i<=15; i++) {
+//			int com = (int)Math.floor(Math.random()*3)+1;
+//			
+//			System.out.println(i+"회 입력");
+//			int user = scan.nextInt();
+//			
+//			if ( user - com == 1 || user - com == -2) {
+//				Wincount++;
+//			}else if(user - com == -1 || user - com == 2){
+//				Losecount++;
+//			}else {
+//				Count++;
+//			}
+//			System.out.println("승리 : "+Wincount+" 회");
+//			System.out.println("패배 : "+Losecount+" 회");
+//			System.out.println("무승부 : "+Count+" 회");
+//			
+//			
+//		}
 		
-		int count = 0;
 		
 		
-		for (int i=1; i<=15; i++) {
-			int user = (int)Math.floor(Math.random()*3)+1;
-			int com = (int)Math.floor(Math.random()*3)+1;
+		//과제 2
+//		 *  내가 숫자 하나를 제시하고 컴퓨터가 그 숫자를 맞출수있도록 내가 범위를 점점 줄여가며
+//		 *  컴퓨터가 맞출수있도록 내가 랜덤 범위를 계속 줄일수있는 코딩 짜기
+//		 * 
+		
+		
+		
+		System.out.println("1~50숫자 입력");
+		int Num = scan.nextInt();
+		
+		int com3 = 0;
+		int com = (int)Math.floor(Math.random()*50)+1;
+		System.out.println(com);
+		
+		while (true) {
 			
-			if (user - com == ) 
+			System.out.println("1.up 2.down");
+			System.out.println("up, down 입력 :");
+			int Button = scan.nextInt();
 			
+			if (Button ==1 ) {
+				com3 = com;
+				int com2 = (int)Math.floor(Math.random()*(50-com3+1))+1;
+			}else if (Button ==2) {
+				com3 = com;
+				int com2 = (int)Math.floor(Math.random()*(com3-1+1))+1;
+			}
+			
+		
+			if (Num == com3)break;	
 		}
-		 
-		
+		System.out.println("정답");
 		
 		
 		
