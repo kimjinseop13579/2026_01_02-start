@@ -39,13 +39,16 @@ public class LoopMain2 {
 		int com3 =0;
 		
 		
-		while (true) {
+//		while (true) {
+//			com2 = (int)Math.floor(Math.random()*9)+1;
+//			com3 = (int)Math.floor(Math.random()*9)+1;
+//			if (  com1 != com2 && com2 != com3 && com1 != com3)break;
+//			
+//		}
+		do {
 			com2 = (int)Math.floor(Math.random()*9)+1;
-			com3 = (int)Math.floor(Math.random()*9)+1;
-			if (  (com1 != com2 && com2 != com3) && com1 != com3)break;
-			
-		}
-		
+	        com3 = (int)Math.floor(Math.random()*9)+1;
+		} while (  !(com1 != com2 && com2 != com3 && com1 != com3));
 		
 		
 		while (true) {
