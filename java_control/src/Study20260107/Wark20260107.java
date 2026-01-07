@@ -29,30 +29,33 @@ public class Wark20260107 {
 //		
 //		예약 인원 수 : 5
 //		연속 좌석이 없습니다
-		int Seat0 =0; //빈자리
-		int Seat1 =0; //예약자리
-		int Seat3 =0;//연속된 빈자리
-		
+
 		Scanner user = new Scanner(System.in);
-		
+
 		int[] seats = new int[50];
-		
-	
-			for (int i=0; i<=seats.length; i++){
-			seats[i]=Seat0;
+
+		int Seat = 0;
+
+		while (true) {
+			System.out.print("\n 예약 인원 : ");
+			int User = user.nextInt();
+
+			Seat += User;
+
+			for (int j = 0; j <= seats.length; j++) {
+				if (Seat >= seats.length) {
+					System.out.println("좌석이 없습니다");
+					Seat -= User;
+				}
+				if (j +1 <= Seat)
+					System.out.printf("%2d", 1);
+				else
+					System.out.printf("%2d", 0);
+				
+					
+
 			}
-			
-			while(true) {
-				System.out.print("예약 인원 : ");
-				int user1 = user.nextInt();
-				
-				
-				for (int i=0; i<=;
-			}
-				
-				
-			}
-		
+		}
 
 	}
 
