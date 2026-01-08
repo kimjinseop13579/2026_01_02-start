@@ -52,8 +52,6 @@ public class Wark20260107 {
 				else
 					System.out.printf("%2d", 0);
 				
-					
-
 			}
 		}
 
