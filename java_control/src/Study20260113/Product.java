@@ -8,7 +8,6 @@ public class Product {
 	private String description; // 제품설명
 	
 	public Product(String itemName, int price, int stock, String description) {
-		super();
 		this.itemName = itemName;
 		this.price = price;
 		this.stock = stock;
