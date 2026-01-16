@@ -1,15 +1,15 @@
 package Dto;
 
-public class TeaOrder extends BaseOrder{
+public class DessertOrder extends BaseOrder{
 
-	public TeaOrder(String cafeName, String menuName) {
+	public DessertOrder(String cafeName, String menuName) {
 		super(cafeName, menuName);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void make() {
-		System.out.println("[ "+cafeName+" ] 물 끓이기 => 티 우려내기...");
+		System.out.println("[ "+cafeName+" ] 디저트 준비 => 프레이팅 중...");
 		
 	}
 

@@ -1,20 +1,57 @@
 package Dto;
 
+import Able.CafeOrder;
+
 public class Cafe {
-	
+
 	private String cafeName;
 	private String[] menu;
-	
+
 	public Cafe(String cafeName, String[] menu) {
 		this.cafeName = cafeName;
-		this.menu=menu;
-		
+		this.menu = menu;
+
 	}
-	//주문을 위한 메뉴 제공
+
+	// 주문을 위한 메뉴 제공
 	public void showMenu() {
-		System.out.println("[ "+cafeName+" ] 메뉴판" );
-		for(String m:menu) {
-			System.out.println("ㅡ"+m);
+		System.out.println("[ " + cafeName + " ] 메뉴판");
+		for (String m : menu) {
+			System.out.println("ㅡ" + m);
 		}
+	}
+
+	// 주문
+	public void order(String menuName) {
+		// 원래는 여기 위치에 주문한 메뉴가 제공이 가능한지판단하는
+		// if문 이 있이야함 품절될수있으니
+
+		// OrderFactory클래스는 주문을 받았을때 어떤주문인지- 커피,차,디저트
+		CafeOrder order = null;
+		switch (menuName) {
+		case "아메리카노":
+		case "라떼":
+			order = new CoffeeOrder(cafeName, menuName);
+			break;
+		case "홍차":
+		case "녹차":
+			order = new TeaOrder(cafeName, menuName);
+			break;
+		case "치즈케이크":
+		case "티라미슈":
+			order = new DessertOrder(cafeName, menuName);
+			break;
+		default:
+			System.out.println("제공되지 않는메뉴입니다.");
+
+		}
+		
+		//메뉴에 맞는 주문 시작하기
+		if (order == null) 
+			return;
+		
+		order.takeOrder();
+		order.make();
+		order.serve();
 	}
 }
